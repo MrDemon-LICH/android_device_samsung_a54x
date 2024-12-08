@@ -49,11 +49,6 @@ jobs:
       - name: Setup Env
         run: |
           sudo apt install git aria2 -y
-          git clone https://gitlab.com/OrangeFox/misc/scripts ~/scripts
-          cd ~/scripts
-          sudo bash setup/android_build_env.sh
-          sed -i 's/cd -/cd ../g' setup/install_android_sdk.sh
-          sudo bash setup/install_android_sdk.sh
 
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -83,7 +78,7 @@ jobs:
 
       - name: Cloning Trees
         run: |
-          git clone --branch twrp-12.1 https://github.com/Vaz15k/android_device_samsung_a54x.git device/samsung/a54x
+          git clone --branch twrp-12.1 https://github.com/MrDemon-LICH/android_device_samsung_a54x.git device/samsung/a54x
         working-directory: ./twrp-12.1
 
       - name: Build Recovery
